@@ -1,35 +1,40 @@
 		<!-- Begin Content -->
 			<div id="main-content">
-				<?php
-					/*
-				<h1 <?php if (is_single()) echo 'class="single_post"'; ?>>
-					<?php
-					// Display title based on type of page
-					
-					if (is_home()) {
-						echo '<a href="/">Latest Posts</a>';
-					}
-					elseif (is_page()) {
-						// Echo wrapper
-						echo '<a href="'.get_permalink().'" class="title_link" rel="bookmark" title="Permanent Link to '.the_title_attribute('echo=0').'">';
+				<header <?php if (is_single()) echo 'class="single_post"'; ?>>
+					<h1>
+						<?php
+						// Display title based on type of page
 						
-						echo single_post_title('', false);
+						if (is_home()) {
+							echo '<a href="/">Latest Posts</a>';
+						}
+						elseif (is_page() || is_single()) {
+							// Echo wrapper
+							echo '<a href="'.get_permalink().'" class="title_link" rel="bookmark" title="Permanent Link to '.the_title_attribute('echo=0').'">';
+							
+							echo single_post_title('', false);
 
-						// Echo wrapper end
-						echo '</a>';
-					}
-					elseif (is_search()) {
-						echo 'Search Results';
-					}
-					else {
-						wp_title('');
-					}
-					
-					?>
-					
-				</h1>
-					*/
-				?>
+							// Echo wrapper end
+							echo '</a>';
+						}
+						elseif (is_search()) {
+							echo 'Search Results';
+						}
+						else {
+							$this_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+							// Echo wrapper
+							echo '<a href="//'.$this_url.'" class="title_link" rel="bookmark" title="Permanent Link to '.the_title_attribute('echo=0').'">';
+							
+							wp_title('');
+
+							// Echo wrapper end
+							echo '</a>';
+						}
+						
+						?>
+						
+					</h1>
+				</header>
 				<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 				<?php

@@ -216,11 +216,26 @@ input:focus {
 	width: 638px;
 	margin: 10px;
 }
-article.post {
-	margin-bottom: 30px;
+#main-content header h1 {
+	margin: 0px;
 }
-article.post header {
+#main-content header h1 a, #main-content header h1 ai:link {
+	color: #305EAA;
+	text-decoration: none;
+}
+#main-content header h1 a:hover {
+	color: #036;
+}
+#main-content article.post {
+	margin: 0px 10px;
+	margin-bottom: 30px;
+	padding: 10px;
+}
+#main-content article.post header {
+	margin: 0px;
+	padding: 0px;
 	line-height: 22px;
+	border: 0px none;
 	overflow: hidden;
 }
 article.post header h1 {
@@ -242,7 +257,7 @@ article.post header time {
 	clear: right;
 }
 article.post .post-content {
-	margin: 10px 0px;
+	margin-bottom: 10px;
 	overflow: hidden;
 }
 .featured-image img {
@@ -255,6 +270,7 @@ article.post .post-content p {
 }
 article.post .post-content img {
 	margin: 10px;
+	background-color: #fff;
 }
 article.post .post-footer-container {
 	margin-top: 20px;
@@ -309,7 +325,6 @@ div#comment-container {
 	margin: 10px;
 	margin-left: 0px;
 	padding-left: 10px;
-	border-left: 1px solid #e0e0e0;
 }
 #sidebar .widget {
 	margin-bottom: 20px;
@@ -321,6 +336,9 @@ div#comment-container {
 	color: #305EAA;
 	font-size: 16px;
 	margin: 0px;
+}
+#sidebar .widget .widget-content {
+	margin: 0px 10px;
 }
 
 /* Footer Styling */
