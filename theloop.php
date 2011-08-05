@@ -1,35 +1,55 @@
 		<!-- Begin Content -->
 			<div id="main-content">
-				<header <?php if (is_single()) echo 'class="single_post"'; ?>>
+				<header <?php if (is_single()) echo 'class="single-post"'; ?>>
 					<h1>
 						<?php
 						// Display title based on type of page
+
+						// Get post/page data
+						global $post;
+						$pageTitle = get_the_title($post);
+						$pageParentTitle = get_the_title($post->post_parent);
+						$postCategoryArray = get_the_category($post->ID);
+
+						// Declare and initialize variables
+						$the_url = '';
+						$the_title = '';
 						
 						if (is_home()) {
-							echo '<a href="/">Latest Posts</a>';
+							$the_url = '/';
+							$the_title = 'Lastest Posts';
 						}
-						elseif (is_page() || is_single()) {
-							// Echo wrapper
-							echo '<a href="'.get_permalink().'" class="title_link" rel="bookmark" title="Permanent Link to '.the_title_attribute('echo=0').'">';
-							
-							echo single_post_title('', false);
-
-							// Echo wrapper end
-							echo '</a>';
+						elseif (is_page()) {
+							$the_url = get_permalink();
+							$the_title = single_post_title('', false);
+						}
+						elseif (is_single()) {
+							if ($postCategoryArray[0]->cat_name !== '') {
+								$the_url = get_category_link($postCategoryArray[0]->cat_ID);
+								$the_title = $postCategoryArray[0]->cat_name;
+							}
+							else {
+								$the_url = get_permalink();
+								$the_title = $pageTitle;
+							}
 						}
 						elseif (is_search()) {
-							echo 'Search Results';
+							$the_url = get_permalink();
+							$the_title = 'Search Results';
 						}
 						else {
-							$this_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-							// Echo wrapper
-							echo '<a href="//'.$this_url.'" class="title_link" rel="bookmark" title="Permanent Link to '.the_title_attribute('echo=0').'">';
-							
+							$the_url = '//'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+							// Get the title
+							ob_start();
 							wp_title('');
-
-							// Echo wrapper end
-							echo '</a>';
+							$the_title = trim(ob_get_contents());
+							ob_end_clean();
 						}
+						
+						// Echo title
+						echo '<a href="'.$the_url.'" class="title_link" rel="bookmark" title="Permanent Link to '.esc_attr($the_title).'">';
+						echo $the_title;
+						echo '</a>';
 						
 						?>
 						
