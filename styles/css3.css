@@ -1,0 +1,103 @@
+#page-nav, #content-container, #site-search {
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-clip: border-box;
+	-moz-background-clip: border-box;
+	-webkit-background-clip: border-box;
+	background-origin: border-box;
+	-moz-background-origin: border-box;
+	-webkit-background-origin: border-box;
+}
+#main-container {
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
+	-o-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
+}
+#page-logo {
+	font-smoothing: always;
+	-webkit-font-smoothing: always;
+	-webkit-background-clip: text;
+	text-shadow: rgba(0, 0, 0, 0.3) 0px 5px 8px;
+}
+#page-logo a {
+	text-stroke: 1px #222;
+	-webkit-text-stroke: 1px #222;
+}
+#page-nav {
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+	-o-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+#site-search {
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
+	-o-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+#site-search input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-o-appearance:i none;
+}
+::-webkit-input-placeholder {
+	color: #666;
+	vertical-align: middle;
+}
+:-moz-placeholder {
+	color: #666;
+	vertical-align: middle;
+}
+#content-container {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	-o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Universal */
+
+::selection {
+	background: #305eaa;
+	color: white;
+	text-shadow: none;
+}
+a, a:link, img {
+	transition: all 0.15s ease-out;
+	-moz-transition: all 0.15s ease-out;
+	-webkit-transition: all 0.15s ease-out;
+	-o-transition: all 0.15s ease-out;
+}
+
+/* Content Styling */
+.featured-image img, .post-content img, object, embed {
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+	-o-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+.featured-image:hover img, .post-content img:hover, object:hover, embed:hover {
+	box-shadow: 0px 0px 6px #305EAA;
+	-moz-box-shadow: 0px 0px 6px #305EAA;
+	-webkit-box-shadow: 0px 0px 6px #305EAA;
+	-o-box-shadow: 0px 0px 6px #305EAA;
+}
+img.wp-smiley, img.wp-smiley:hover {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+}
+div#comment-container {
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-clip: border-box;
+	-moz-background-clip: border-box;
+	-webkit-background-clip: border-box;
+	background-origin: border-box;
+	-moz-background-origin: border-box;
+	-webkit-background-origin: border-box;
+}
