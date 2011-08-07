@@ -10,6 +10,9 @@
 						$pageTitle = get_the_title($post);
 						$pageParentTitle = get_the_title($post->post_parent);
 						$postCategoryArray = get_the_category($post->ID);
+						$postCategoryParentID = $postCategoryArray[0]->category_parent;
+						$categoryParentName = get_the_category_by_ID($postCategoryParentID);
+						$categoryParentURL = get_category_link($postCategoryParentID);
 
 						// Declare and initialize variables
 						$the_url = '';
@@ -25,8 +28,15 @@
 						}
 						elseif (is_single()) {
 							if ($postCategoryArray[0]->cat_name !== '') {
-								$the_url = get_category_link($postCategoryArray[0]->cat_ID);
-								$the_title = $postCategoryArray[0]->cat_name;
+								// If we have a parent category, use that instead
+								if ($postCategoryArray[0]->category_parent != 0) {
+									$the_url = $categoryParentURL;
+									$the_title = $categoryParentName;
+								}
+								else {
+									$the_url = get_category_link($postCategoryArray[0]->cat_ID);
+									$the_title = $postCategoryArray[0]->cat_name;
+								}
 							}
 							else {
 								$the_url = get_permalink();

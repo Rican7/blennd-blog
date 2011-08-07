@@ -377,6 +377,13 @@ div#comment-container {
 	font-size: 16px;
 	margin: 0px;
 }
+#page-footer .widget p {
+	margin: 6px 0px;
+}
 #page-footer a, #page-footer a:link {
 	color: #fff;
+	text-decoration: underline;
+}
+#page-footer a:hover {
+	color: #96BEFF;
 }
