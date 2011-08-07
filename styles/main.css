@@ -2,6 +2,8 @@ body {
 	background-color: #a0a0a0;
 	background-image: url(../imgs/main_bg.png);
 	font-family: 'Arimo', arial, serif;
+	font-size: 14px;
+	line-height: 19px;
 	outline-style: solid;
 	outline-color: #305eaa;
 }
@@ -258,6 +260,8 @@ article.post header time {
 }
 article.post .post-content {
 	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 19px;
 	overflow: hidden;
 }
 .featured-image img {
