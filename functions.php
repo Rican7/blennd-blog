@@ -24,23 +24,14 @@ if (function_exists('register_sidebar')) {
 			'name' => 'Sidebar Widget',
 			'before_widget' => '<section class="widget %2$s">',
 			'after_widget' => '</section>',
-			'before_title' => '<header><header><h1>',
-			'after_title' => '</h1></header></header>',
+			'before_title' => '<header><h1>',
+			'after_title' => '</h1></header>',
 		)
 	);
 }
 
 // Multiple sidebar widgets
 if (function_exists('register_sidebars')) {
-	register_sidebar(
-		array(
-			'name' => 'Rounded Sidebar Widget',
-			'before_widget' => '<section class="widget isolated %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<header><header><h1>',
-			'after_title' => '</h1></header></header>',
-		)
-	);
 	register_sidebars(
 		$numberOfSidebarWidgets,
 		array(
