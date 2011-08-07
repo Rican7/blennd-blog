@@ -320,7 +320,7 @@ div#comment-container {
 
 /* Sidebar Styling */
 #sidebar {
-	position: absolute;
+	/* position: absolute; */ /* Need for a site height left border */
 	right: 0;
 	top: 0;
 	bottom: 0;
