@@ -17,29 +17,15 @@ set_post_thumbnail_size($postThumbMaxWidth, $postThumbMaxHeight, $postCropMode);
 
 // Create sidebars
 
-// Top sidebar widget
+// Sidebar widget area
 if (function_exists('register_sidebar')) {
 	register_sidebar(
 		array(
 			'name' => 'Sidebar Widget',
 			'before_widget' => '<section class="widget %2$s">',
-			'after_widget' => '</section>',
+			'after_widget' => '</div></section>',
 			'before_title' => '<header><h1>',
-			'after_title' => '</h1></header>',
-		)
-	);
-}
-
-// Multiple sidebar widgets
-if (function_exists('register_sidebars')) {
-	register_sidebars(
-		$numberOfSidebarWidgets,
-		array(
-			'name' => 'Sidebar Widget %d',
-			'before_widget' => '<section class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<header><h1>',
-			'after_title' => '</h1></header>',
+			'after_title' => '</h1></header><div class="widget-content">',
 		)
 	);
 }

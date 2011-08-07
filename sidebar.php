@@ -25,12 +25,4 @@
 					<!-- Widget Content Here -->
 				</section>
 			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar')
-			   || !dynamic_sidebar(2) ) : ?>
-				<!-- Sidebar Placeholder -->
-			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar')
-			   || !dynamic_sidebar(3) ) : ?>
-				<!-- Sidebar Placeholder -->
-			<?php endif; ?>
 		</aside>

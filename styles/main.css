@@ -195,6 +195,9 @@ object, embed {
 }
 
 /* Links */
+a, a:link {
+	text-decoration: none;
+}
 a:focus {
 	outline-color: #305eaa;
 }
@@ -316,6 +319,16 @@ div#comment-container {
 	margin: 0px 10px;
 	padding: 1px 10px;
 	background-color: #E6E6E6;
+}
+
+/* Universal Widget Styling */
+.widget ul {
+	margin-left: 0px;
+	list-style-type: none;
+}
+.widget ul ul {
+	margin-left: 28px;
+	list-style-type: circle;
 }
 
 /* Sidebar Styling */
