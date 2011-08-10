@@ -166,6 +166,46 @@
 								
 								<a href="<?php the_permalink(); ?>" class="read-more-link">Keep Reading</a>
 							<? endif; ?>
+							
+							<?php
+
+							// Get the post sources custom value
+							$post_sources = get_post_custom_values('Source');
+
+							// If there are sources, let's add them to the end of the post
+							$sources_count = count($post_sources);
+							if ($sources_count > 0) :
+
+							?>
+
+							<!-- Start sources links -->
+							<span class="sources-links">
+								<strong>Sources: </strong>
+
+							<?php
+								$source_num = 1;
+								foreach ($post_sources as $source) {
+									// Break into parts
+									$source_parts = explode("\r\n", $source);
+									$source_name = $source_parts[0]; // Source name should be the first line
+									$source_url = $source_parts[1]; // Source url should be the second line
+
+									echo '<a href="'.$source_url.'" target="_blank">'.$source_name.'</a>';
+
+									if ($source_num < $sources_count) {
+										echo ', ';
+									}
+
+									// Increment the source number
+									$source_num++;
+								}
+							?>
+							
+							</span>
+							<!-- End sources links -->
+							
+							<?php endif; ?>
+								
 							<footer>
 								<?php if ( comments_open() ) : ?>
 									

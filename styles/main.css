@@ -149,19 +149,19 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 10px;
 }
 h1 {
-	font-size: 22px;
-	line-height: 24px;
-}
-h2 {
 	font-size: 20px;
 	line-height: 22px;
 }
-h3 {
+h2 {
 	font-size: 18px;
 	line-height: 20px;
 }
-h4 {
+h3 {
 	font-size: 16px;
+	line-height: 18px;
+}
+h4 {
+	font-size: 15px;
 }
 h5 {
 	font-size: 14px;
@@ -247,7 +247,7 @@ article.post header h1 {
 	float: left;
 	clear: left;
 	color: #305EAA;
-	font-size: 22px;
+	font-size: 20px;
 	margin: 0px;
 }
 article.post header h1 a, article.post header h1 ai:link {
@@ -281,10 +281,15 @@ article.post .post-content img {
 }
 article.post .post-footer-container {
 	margin-top: 20px;
+	font-size: 12px;
 }
 article.post .read-more-link {
 	display: block;
 	text-align: center;
+}
+article.post .sources-links {
+	display: block;
+	text-align: left;
 }
 article.post footer {
 	line-height: 16px;
