@@ -154,6 +154,7 @@
 						else {
 							the_content();
 							wp_link_pages();
+							$excerptOnly = false;
 						}
 
 						?>
@@ -174,7 +175,7 @@
 
 							// If there are sources, let's add them to the end of the post
 							$sources_count = count($post_sources);
-							if ($sources_count > 0) :
+							if ($sources_count > 0 && $excerptOnly != true) :
 
 							?>
 
