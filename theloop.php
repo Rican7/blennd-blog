@@ -230,6 +230,13 @@
 								<span class="tags"><?php the_tags('Tags: ', ', ', ''); ?></span>
 							</footer>
 						</div>
+						<?php if ( is_single() && comments_open() ) : ?>
+							
+							<section id="comment-container">
+								<?php comments_template(); ?>
+									
+							</section>
+						<?php endif; ?>
 					<? endif; ?>
 					
 				</article>
@@ -258,14 +265,6 @@
 						</div>
 					</div>
 					<!--end navigation-->
-				<?php elseif (is_single() || is_page()) : ?>
-					<?php if ( comments_open() ) : ?>
-						
-						<div id="comment-container">
-							<?php comments_template(); ?>
-								
-						</div>
-					<?php endif; ?>
 				<? endif; ?>
 				<?php else : ?>
 					<?php if (is_search()) : ?>

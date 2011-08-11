@@ -113,7 +113,7 @@ img.wp-smiley, img.wp-smiley:hover {
 	-webkit-box-shadow: none;
 	-o-box-shadow: none;
 }
-div#comment-container {
+section#comment-container {
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;

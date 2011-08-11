@@ -330,10 +330,12 @@ article.post footer .tags {
 }
 
 /* Comment Styling */
-div#comment-container {
-	margin: 0px 10px;
+section#comment-container {
+	margin: 0px;
+	margin-top: 20px;
 	padding: 1px 10px;
-	background-color: #E6E6E6;
+	background-color: #fafafa;
+	border: 1px solid #ddf;
 }
 
 /* Universal Widget Styling */
