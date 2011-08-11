@@ -1,8 +1,40 @@
+<?php
+// Generic error document handler
+$error_code = 404;
+$error_title = 'Page not found';
+$error_message = 'The page you\'re looking for isn\'t here.<br />You either tried to access a page that doesn\'t exist,<br />or I\'ve moved or deleted something like an idiot. My bad.';
+
+// Set error code locally, just cuz its cleaner
+if (isset($_GET['code'])) {
+	$error_code = $_GET['code'];
+}
+
+// Change title and message depending on the type of error
+/*
+switch ($error_code) {
+	case 400:
+		$error_title = 'Bad request';
+		$error_message = 'Somehow or another, you made a request that I just don\t understand. Try again?';
+		break;
+	case 401:
+		$error_title = 'Unauthorized';
+		$error_message = 'Oooo... I see what\'s going on.';
+		break;
+}
+*/
+
+// Send header info	
+header("HTTP/1.1 $error_code $error_title");
+header("Status: $error_code $error_title");
+
+?>
+
 <!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>404 Page not found</title>
+	<base href="<?php bloginfo('template_directory'); echo '/'; ?>" />
+	<title><?php echo $error_code.' '.$error_title; ?></title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:regular,italic,bold,bolditalic&amp;v1">
 	<style>
 		body {
@@ -187,13 +219,11 @@
 		</header>
 		<article>
 			<header>
-				<h1><span class="error-code">404</span> Page not found</h1>
+				<h1><span class="error-code"><?php echo $error_code; ?></span> <?php echo $error_title; ?></h1>
 				<h2 id="error-punchline">Houston, we have a problem</h2>
 			</header>
 			<section id="error-details">
-				<p>The page you're looking for isn't here.<br />
-				You either tried to access a page that doesn't exist,<br />
-				or I've moved or deleted something like an idiot. My bad.</p>
+				<p><?php echo $error_message; ?></p>
 			</section>
 			<section id="search">
 				<label id="site-search">
