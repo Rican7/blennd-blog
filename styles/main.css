@@ -203,6 +203,21 @@ blockquote {
 	font-weight: bold;
 	text-align: justify;
 }
+pre {
+	margin: 15px 5px;
+	padding: 10px;
+	line-height: 20px; /*--Height of each line of code--*/
+	background-color: #131313;
+	color: #ccc;
+	font-size: 12px;
+	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+}
+pre code {
+	margin: 0 0 0 40px;  /*--Left Margin--*/
+	padding: 18px 0;
+	display: block;
+}
 
 /* Links */
 a, a:link {
@@ -295,7 +310,10 @@ article.post .post-footer-container {
 }
 article.post .read-more-link {
 	display: block;
+	line-height: 20px;
 	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
 }
 article.post .sources-links {
 	display: block;
@@ -374,6 +392,13 @@ section#comment-container {
 }
 #sidebar .widget .widget-content {
 	margin: 0px 10px;
+}
+#sidebar .widget .social-sidebar-icons {
+	margin: 0px;
+	text-align: center;
+}
+.social-sidebar-icons img {
+	margin: 0px 6px;
 }
 
 /* Footer Styling */
