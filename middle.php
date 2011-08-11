@@ -8,16 +8,18 @@
 			<aside id="top-quote">A whole mess of me, all ble<span>nn</span>d'd together</aside> 
 		</header> 
 		<nav id="page-nav"> 
-			<ul id="main-navigation"> 
-				<?php
-					// Include the middle section	
-					get_template_part( 'navlinks' );
-				?>
-			</ul> 
-			<label id="site-search"> 
-				<form action="/" method="get"> 
-					<input type="search" name="s" placeholder="Search" x-webkit-speech /> 
-				</form> 
-			</label> 
+			<div id="page-nav-inner">
+				<ul id="main-navigation">
+					<?php
+						// Include the middle section	
+						get_template_part( 'navlinks' );
+					?>
+				</ul>
+				<label id="site-search">
+					<form action="/" method="get">
+						<input type="search" name="s" placeholder="Search" x-webkit-speech />
+					</form>
+				</label>
+			</div>
 		</nav> 
 		<div id="content-container">

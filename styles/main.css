@@ -1,6 +1,6 @@
 body {
 	background-color: #a0a0a0;
-	background-image: url(../imgs/main_bg.png);
+	background-image: url(../imgs/noise.png);
 	font-family: 'Arimo', arial, serif;
 	font-size: 14px;
 	line-height: 19px;
@@ -70,9 +70,11 @@ body {
 	line-height: 50px;
 	margin: auto;
 	background-color: #1d3865;
-	background-image: url(../imgs/navbar_bg.png);
-	background-repeat: repeat-x;
 	overflow: hidden;
+}
+#page-nav-inner {
+	overflow: hidden;
+	background-image: url(../imgs/noise_scanlines.png);
 }
 #main-navigation {
 	float: left;
@@ -135,7 +137,7 @@ body {
 	position: relative;
 	z-index: 1;
 	background-color: #1d3865;
-	background-image: url(../imgs/footer_bg.png);
+	background-image: url(../imgs/noise.png);
 }
 #page-footer {
 	width: 960px;
