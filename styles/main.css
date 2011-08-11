@@ -218,6 +218,11 @@ pre code {
 	padding: 18px 0;
 	display: block;
 }
+.atclear {
+	display: none;
+	clear: both;
+	overflow: hidden;
+}
 
 /* Links */
 a, a:link {
@@ -399,6 +404,12 @@ section#comment-container {
 }
 .social-sidebar-icons img {
 	margin: 0px 6px;
+}
+#sidebar .widget .social-sidebar-actions {
+	display: none;
+	height: 20px;
+	margin: 4px auto;
+	overflow: hidden;
 }
 
 /* Footer Styling */

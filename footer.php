@@ -50,6 +50,10 @@
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
+	<script>
+		var addthis_config = {"data_track_clickback":true};
+	</script>
+	<script src="http://s7.addthis.com/js/250/addthis_widget.js#username=rican7"></script>
 
      <?php wp_footer(); ?>
 
