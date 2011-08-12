@@ -36,15 +36,28 @@ header("Status: $error_code $error_title");
 	<base href="<?php bloginfo('template_directory'); echo '/'; ?>" />
 	<title><?php echo $error_code.' '.$error_title; ?></title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:regular,italic,bold,bolditalic&amp;v1">
+	<!--[if lte IE 8]>
+	<script>
+	// HTML5 Enabler for IE 8 and below
+	// For discussion and comments, see: http://remysharp.com/2009/01/07/html5-enabling-script/
+	(function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(',');for(var i=0;i<e.length;i++){document.createElement(e[i])}})()
+	</script>
+	<style>
+		header, footer, nav, section, article {
+			display: block;
+		}
+	</style>
+	<![endif]-->
 	<style>
 		body {
 			margin: 0px;
 			background-color: #A0A0A0;
-			background-image: url(imgs/main_bg.png);
+			background-image: url(imgs/noise.png);
 			font-family: 'Arimo', arial, serif;
 			font-size: 14px;
 			line-height: 19px;
 			outline-color: #305EAA;
+			text-shadow: rgba(0, 0, 0, 0.3) 0px 5px 8px;
 		}
 		article, #site-search {
 			border-radius: 10px;
@@ -60,15 +73,26 @@ header("Status: $error_code $error_title");
 		#main-container {
 			width: 100%;
 			margin: 0px;
-			padding-bottom: 35px;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			right: 0px;
-			bottom: 0px;
+			position: relative;
 			z-index: 2;
-			background-image: url(imgs/main_grad_bg.png);
-			background-repeat: repeat-x;
+			background-color: #a0a0a0;
+		}
+		#design-container {
+			width: 100%;
+			height: 600px;
+			position: absolute;
+			z-index: -10;
+			background: -moz-linear-gradient(top, #787878 0%, #a0a0a0 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#787878), color-stop(100%,#a0a0a0)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #787878 0%,#a0a0a0 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #787878 0%,#a0a0a0 100%); /* Opera11.10+ */
+			background: -ms-linear-gradient(top, #787878 0%,#a0a0a0 100%); /* IE10+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#787878', endColorstr='#a0a0a0',GradientType=0 ); /* IE6-9 */
+			background: linear-gradient(top, #787878 0%,#a0a0a0 100%); /* W3C */
+		}
+		#main-content-inner-container {
+			height: 600px;
+			background-image: url(imgs/noise.png);
 		}
 		#page-header {
 			width: 660px;
@@ -118,20 +142,33 @@ header("Status: $error_code $error_title");
 			-webkit-text-stroke: 1px #222;
 		}
 		article {
-			width: 640px;
-			height: 300px;
+			width: 660px;
+			height: 320px;
 			margin: auto;
-			padding: 10px;
 			position: relative;
 			z-index: 1;
 			background-color: #1D3865;
-			background-image: url(imgs/footer_bg.png);
+			overflow: hidden;
 			color: #fff;
 			text-align: center;
+			background: -moz-linear-gradient(top, #3161af 0%, #182f55 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3161af), color-stop(100%,#182f55)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #3161af 0%,#182f55 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #3161af 0%,#182f55 100%); /* Opera11.10+ */
+			background: -ms-linear-gradient(top, #3161af 0%,#182f55 100%); /* IE10+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3161af', endColorstr='#182f55',GradientType=0 ); /* IE6-9 */
+			background: linear-gradient(top, #3161af 0%,#182f55 100%); /* W3C */
 			box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
 			-moz-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
 			-webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
 			-o-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
+		}
+		#article-inner {
+			width: 640px;
+			height: 300px;
+			padding: 10px;
+			overflow: hidden;
+			background-image: url(imgs/noise_scanlines.png);
 		}
 		article header {
 			margin: auto;
@@ -210,29 +247,34 @@ header("Status: $error_code $error_title");
 </head>
 <body>
 	<div id="main-container">
-		<header id="page-header">
-			<div id="page-logo"> 
-				<a href="/">ble<span>nn</span>d</a> 
-				<span class="logo-stroke" id="stroke-upleft">ble<span>nn</span>d</span> 
-				<span class="logo-stroke" id="stroke-downright">ble<span>nn</span>d</span> 
-			</div>
-		</header>
-		<article>
-			<header>
-				<h1><span class="error-code"><?php echo $error_code; ?></span> <?php echo $error_title; ?></h1>
-				<h2 id="error-punchline">Houston, we have a problem</h2>
+		<div id="design-container"></div>
+		<div id="main-content-inner-container">
+			<header id="page-header">
+				<div id="page-logo"> 
+					<a href="/">ble<span>nn</span>d</a> 
+					<span class="logo-stroke" id="stroke-upleft">ble<span>nn</span>d</span> 
+					<span class="logo-stroke" id="stroke-downright">ble<span>nn</span>d</span> 
+				</div>
 			</header>
-			<section id="error-details">
-				<p><?php echo $error_message; ?></p>
-			</section>
-			<section id="search">
-				<label id="site-search">
-					<form action="/" method="get">
-						<input type="search" name="s" placeholder="Search" x-webkit-speech />
-					</form>
-				</label> 
-			</section>
-		</article>
+			<article>
+				<div id="article-inner">
+					<header>
+						<h1><span class="error-code"><?php echo $error_code; ?></span> <?php echo $error_title; ?></h1>
+						<h2 id="error-punchline">Houston, we have a problem</h2>
+					</header>
+					<section id="error-details">
+						<p><?php echo $error_message; ?></p>
+					</section>
+					<section id="search">
+						<label id="site-search">
+							<form action="/" method="get">
+								<input type="search" name="s" placeholder="Search" x-webkit-speech />
+							</form>
+						</label> 
+					</section>
+				</div>
+			</article>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,20 +1,26 @@
 body {
 	background-color: #a0a0a0;
-	background-image: url(../imgs/main_bg.png);
 	font-family: 'Arimo', arial, serif;
 	font-size: 14px;
 	line-height: 19px;
-	outline-style: solid;
 	outline-color: #305eaa;
 }
 #main-container {
 	width: 100%;
 	margin: 0px;
-	padding-bottom: 35px;
 	position: relative;
 	z-index: 2;
-	background-image: url(../imgs/main_grad_bg.png);
-	background-repeat: repeat-x;
+	background-color: #a0a0a0;
+}
+#design-container {
+	width: 100%;
+	height: 600px;
+	position: absolute;
+	z-index: -10;
+}
+#main-content-inner-container {
+	padding-bottom: 35px;
+	background-image: url(../imgs/noise.png);
 }
 #page-header {
 	width: 960px;
@@ -70,9 +76,11 @@ body {
 	line-height: 50px;
 	margin: auto;
 	background-color: #1d3865;
-	background-image: url(../imgs/navbar_bg.png);
-	background-repeat: repeat-x;
 	overflow: hidden;
+}
+#page-nav-inner {
+	overflow: hidden;
+	background-image: url(../imgs/noise_scanlines.png);
 }
 #main-navigation {
 	float: left;
@@ -135,7 +143,7 @@ body {
 	position: relative;
 	z-index: 1;
 	background-color: #1d3865;
-	background-image: url(../imgs/footer_bg.png);
+	background-image: url(../imgs/noise.png);
 }
 #page-footer {
 	width: 960px;

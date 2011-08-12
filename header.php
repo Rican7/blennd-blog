@@ -58,8 +58,8 @@ else {
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png"> 
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/html5bp.css?v=1"> 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:regular,italic,bold,bolditalic&amp;v1"> 
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/main.css?v=3"> 
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/css3.css?v=3">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/main.css?v=4"> 
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/css3.css?v=4">
 
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
