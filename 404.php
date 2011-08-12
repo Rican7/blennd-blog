@@ -36,6 +36,18 @@ header("Status: $error_code $error_title");
 	<base href="<?php bloginfo('template_directory'); echo '/'; ?>" />
 	<title><?php echo $error_code.' '.$error_title; ?></title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:regular,italic,bold,bolditalic&amp;v1">
+	<!--[if lte IE 8]>
+	<script>
+	// HTML5 Enabler for IE 8 and below
+	// For discussion and comments, see: http://remysharp.com/2009/01/07/html5-enabling-script/
+	(function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(',');for(var i=0;i<e.length;i++){document.createElement(e[i])}})()
+	</script>
+	<style>
+		header, footer, nav, section, article {
+			display: block;
+		}
+	</style>
+	<![endif]-->
 	<style>
 		body {
 			margin: 0px;
